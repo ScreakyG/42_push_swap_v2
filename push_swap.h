@@ -6,7 +6,7 @@
 /*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:43:03 by fgonzale          #+#    #+#             */
-/*   Updated: 2023/03/01 01:58:14 by fgonzale         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:49:02 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	free_stack(t_stack **stack);
 
 void	simple_sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void	radix_sort(t_stack **stack_a, t_stack **stack_b);
+void	sort_5(t_stack **stack_a, t_stack **stack_b);
 
 /* INSTRUCTIONS */
 
@@ -76,6 +77,5 @@ void	ft_putstr(char *str);
 int		is_sorted(t_stack *stack_a);
 
 int		get_distance(t_stack *stack_a, int index_min);
-int		get_min(t_stack *stack_a, int value);
 
 #endif

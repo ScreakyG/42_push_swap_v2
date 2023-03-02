@@ -6,7 +6,7 @@
 /*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 22:52:47 by fgonzale          #+#    #+#             */
-/*   Updated: 2023/03/01 01:34:20 by fgonzale         ###   ########.fr       */
+/*   Updated: 2023/03/02 03:00:02 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	is_sorted(t_stack *stack_a)
 			return (0);
 		stack_a = stack_a->next;
 	}
-	return (0);
+	return (1);
 }
 
 int	get_distance(t_stack *stack_a, int index_min)
@@ -81,18 +81,4 @@ int	get_distance(t_stack *stack_a, int index_min)
 		stack_a = stack_a->next;
 	}
 	return (distance);
-}
-
-int	get_min(t_stack *stack_a, int value)
-{
-	int	min;
-
-	min = stack_a->index;
-	while (stack_a)
-	{
-		if ((stack_a->index < min) && stack_a->index != value)
-			min = stack_a->index;
-		stack_a = stack_a->next;
-	}
-	return (min);
 }

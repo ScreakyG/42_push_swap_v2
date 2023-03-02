@@ -6,11 +6,25 @@
 /*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 22:27:57 by fgonzale          #+#    #+#             */
-/*   Updated: 2023/03/01 02:09:31 by fgonzale         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:48:49 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	get_min(t_stack *stack_a, int value)
+{
+	int	min;
+
+	min = stack_a->index;
+	while (stack_a->next)
+	{
+		stack_a = stack_a->next;
+		if ((stack_a->index < min) && stack_a->index != value)
+			min = stack_a->index;
+	}
+	return (min);
+}
 
 static void	sort_3(t_stack **stack_a)
 {
@@ -69,7 +83,7 @@ static void	sort_4(t_stack **stack_a, t_stack **stack_b)
 	pa(stack_a, stack_b);
 }
 
-static void	sort_5(t_stack **stack_a, t_stack **stack_b)
+void	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
 	int	distance;
 
@@ -88,6 +102,8 @@ static void	sort_5(t_stack **stack_a, t_stack **stack_b)
 	}
 	else if (distance == 4)
 		rra(stack_a);
+	if (is_sorted(*stack_a))
+		return ;
 	pb (stack_a, stack_b);
 	sort_4(stack_a, stack_b);
 	pa(stack_a, stack_b);
